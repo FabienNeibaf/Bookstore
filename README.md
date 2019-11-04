@@ -1,10 +1,12 @@
 # Bookstore
 
-This project consist of building a web app to help organize and manage a bookstore.
- is part of [microverse](https://www.microverse.org/) curriculum.
+This project consist of building a web app to help organize and manage a bookstore.  
+It is part of [microverse](https://www.microverse.org/) curriculum.
 
 # Technologies
+
 - React.js
+- Redux
 - Ruby on Rails
 - GraphQL/Apollo
 - MongoDB
