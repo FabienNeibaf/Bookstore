@@ -30,3 +30,4 @@ Feel free to contribute if you want to make it better.
 # Author
 
 - [Fabien RAKOTOMAMPIANDRA](https://github.com/FabienNeibaf/)
+- [Ar Nazeh](https://github.com/Nazeh/)
