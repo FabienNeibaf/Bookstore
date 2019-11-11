@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import { createBook } from '../actions';
 
 const CATEGORIES = [
   'Action',
@@ -12,10 +10,6 @@ const CATEGORIES = [
   'Learning',
   'Sci-Fi',
 ];
-
-const mapDispatchToProps = (dispatch) => ({
-  createBook: (book) => dispatch(createBook(book)),
-});
 
 const BooksForm = ({ createBook }) => {
   const [state, setState] = useState({ title: '', category: '' });
@@ -32,12 +26,7 @@ const BooksForm = ({ createBook }) => {
 
   return (
     <form onSubmit={handleSubmit} onChange={handleChange}>
-      <input
-        name="title"
-        value={state.value}
-        type="text"
-        placeholder="Title"
-      />
+      <input name="title" value={state.value} type="text" placeholder="Title" />
       <select name="category" value={state.value}>
         {CATEGORIES.map((category) => (
           <option key={category} value={category}>
@@ -54,7 +43,4 @@ BooksForm.propTypes = {
   createBook: PropTypes.func.isRequired,
 };
 
-export default connect(
-  null,
-  mapDispatchToProps,
-)(BooksForm);
+export default BooksForm;
