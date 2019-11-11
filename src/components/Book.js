@@ -7,10 +7,7 @@ const Book = ({ book, handleRemove }) => (
     <td>{book.title}</td>
     <td>{book.category}</td>
     <td>
-      <button
-        onClick={() => handleRemove(book)}
-        type="button"
-      >
+      <button onClick={() => handleRemove(book)} type="button">
         delete
       </button>
     </td>
@@ -18,7 +15,11 @@ const Book = ({ book, handleRemove }) => (
 );
 
 Book.propTypes = {
-  book: PropTypes.shape.isRequired,
+  book: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+  }).isRequired,
   handleRemove: PropTypes.func.isRequired,
 };
 

@@ -23,19 +23,24 @@ const BooksList = ({ books, removeBook }) => (
     </thead>
     <tbody>
       {books.map((book) => (
-        <Book
-          key={book.id}
-          book={book}
-          handleRemove={removeBook}
-        />
+        <Book key={book.id} book={book} handleRemove={removeBook} />
       ))}
     </tbody>
   </table>
 );
 
 BooksList.propTypes = {
-  books: PropTypes.shape.isRequired,
+  books: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
   removeBook: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(BooksList);
