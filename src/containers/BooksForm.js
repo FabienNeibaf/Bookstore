@@ -12,12 +12,16 @@ const CATEGORIES = [
 ];
 
 const BooksForm = ({ createBook }) => {
-  const [state, setState] = useState({ title: '', category: '' });
+  const initialState = { title: '', category: CATEGORIES[0] };
+
+  const [state, setState] = useState(initialState);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    createBook(state);
-    setState({ title: '', category: '' });
+    if (state.title && state.category) {
+      createBook(state);
+      setState(initialState);
+    }
   };
 
   const handleChange = (e) => {
