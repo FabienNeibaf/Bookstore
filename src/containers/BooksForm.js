@@ -17,6 +17,7 @@ const BooksForm = ({ createBook }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     createBook(state);
+    setState(() => ({ title: '', category: '' }));
   };
 
   const handleChange = (e) => {
@@ -26,8 +27,13 @@ const BooksForm = ({ createBook }) => {
 
   return (
     <form onSubmit={handleSubmit} onChange={handleChange}>
-      <input name="title" value={state.value} type="text" placeholder="Title" />
-      <select name="category" value={state.value}>
+      <input
+        name="title"
+        value={state.title}
+        type="text"
+        placeholder="Title"
+      />
+      <select name="category" value={state.category}>
         {CATEGORIES.map((category) => (
           <option key={category} value={category}>
             {category}
