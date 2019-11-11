@@ -6,8 +6,24 @@ import { Provider } from 'react-redux';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 import reducer from './reducers';
+import uuid from './utils.js';
 
-const store = createStore(reducer, { books: [] });
+const initialState = {
+  books: [
+    {
+      id: uuid(),
+      title: 'Redux',
+      category: 'Learning',
+    },
+    {
+      id: uuid(),
+      title: 'React',
+      category: 'Learning',
+    },
+  ],
+};
+
+const store = createStore(reducer, initialState);
 
 ReactDOM.render(
   <Provider store={store}>
