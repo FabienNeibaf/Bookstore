@@ -1,16 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Book = ({ book, handleRemove }) => (
+const Book = ({ book, removeBook }) => (
   <tr>
     <td>{book.id}</td>
     <td>{book.title}</td>
     <td>{book.category}</td>
     <td>
-      <button
-        onClick={() => handleRemove(book)}
-        type="button"
-      >
+      <button onClick={() => removeBook(book)} type="button">
         delete
       </button>
     </td>
@@ -18,8 +15,12 @@ const Book = ({ book, handleRemove }) => (
 );
 
 Book.propTypes = {
-  book: PropTypes.shape.isRequired,
-  handleRemove: PropTypes.func.isRequired,
+  book: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+  }).isRequired,
+  removeBook: PropTypes.func.isRequired,
 };
 
 export default Book;

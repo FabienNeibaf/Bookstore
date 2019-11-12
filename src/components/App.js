@@ -12,8 +12,8 @@ const mapDispatchToProps = (dispatch) => ({
 
 const App = ({ createBook, removeBook }) => (
   <div>
-    <BooksList deleteHandler={removeBook} />
-    <BooksForm submitHandler={createBook} />
+    <BooksList removeBook={removeBook} />
+    <BooksForm createBook={createBook} />
   </div>
 );
 
