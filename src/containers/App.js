@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createBook, removeBook, changeFilter } from '../actions';
-import BooksList from './BooksList.js';
+import BooksList from '../components/BooksList.js';
 import BooksForm from '../components/BooksForm.js';
 
 const mapDispatchToProps = (dispatch) => ({
@@ -16,7 +16,9 @@ const mapStateToProps = (state) => ({
   books: state.books,
 });
 
-const App = ({ createBook, removeBook, changeFilter, filter, books }) => (
+const App = ({
+  createBook, removeBook, changeFilter, filter, books,
+}) => (
   <div>
     <BooksList
       removeBook={removeBook}

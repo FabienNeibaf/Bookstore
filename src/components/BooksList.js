@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Book from '../components/Book.js';
-import CategoryFilter from '../components/CategoryFilter.js';
+import Book from './Book.js';
+import CategoryFilter from './CategoryFilter.js';
 
-const BooksList = ({ books, filter, removeBook, changeFilter }) => {
-  const visibleBooks =
-    filter === 'All' ? books : books.filter((book) => book.category === filter);
+const BooksList = ({
+  books, filter, removeBook, changeFilter,
+}) => {
+  const visibleBooks = filter === 'All' ? books : books.filter((book) => book.category === filter);
   return (
     <div>
       <CategoryFilter changeFilter={changeFilter} />

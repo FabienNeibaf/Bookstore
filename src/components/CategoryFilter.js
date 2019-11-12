@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { CATEGORIES } from './BooksForm';
+import CATEGORIES from '../utils/categories';
 
 const CategoryFilter = ({ changeFilter }) => (
   <select id="" onChange={(e) => changeFilter(e.target.value)}>
