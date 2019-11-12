@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 
-const CATEGORIES = [
+export const CATEGORIES = [
   'Action',
   'Biography',
   'History',
@@ -32,7 +32,7 @@ const BooksForm = ({ createBook }) => {
   return (
     <form onSubmit={handleSubmit} onChange={handleChange}>
       <input name="title" value={state.title} type="text" placeholder="Title" />
-      <select name="category" value={state.category}>
+      <select name="category">
         {CATEGORIES.map((category) => (
           <option key={category} value={category}>
             {category}
