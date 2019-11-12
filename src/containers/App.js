@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createBook, removeBook } from '../actions';
-import BooksList from '../containers/BooksList.js';
-import BooksForm from '../containers/BooksForm.js';
+import BooksList from './BooksList.js';
+import BooksForm from '../components/BooksForm.js';
 
 const mapDispatchToProps = (dispatch) => ({
   createBook: (book) => dispatch(createBook(book)),
