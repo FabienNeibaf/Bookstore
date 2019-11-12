@@ -4,20 +4,16 @@ import { connect } from 'react-redux';
 import { removeBook, changeFilter } from '../actions';
 import Book from '../components/Book.js';
 import CategoryFilter from '../components/CategoryFilter.js';
+import getFilteredBooks from '../selectors';
 
 const mapDispatchToProps = (dispatch) => ({
   removeBook: (book) => dispatch(removeBook(book)),
   changeFilter: (filter) => dispatch(changeFilter(filter)),
 });
 
-const mapStateToProps = (state) => {
-  const { filter, books } = state;
-  return {
-    books: filter === 'All'
-      ? books
-      : books.filter((book) => book.category === filter),
-  };
-};
+const mapStateToProps = (state) => ({
+  books: getFilteredBooks(state),
+});
 
 const BooksList = ({ books, removeBook, changeFilter }) => (
   <div>
