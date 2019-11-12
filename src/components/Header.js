@@ -21,10 +21,16 @@ const Navigation = styled.nav`
     list-style: none;
 
     li {
-      margin-left:1.5rem;
+      margin-left: 1.5rem;
       font-size: 13px;
       letter-spacing: 1.9px;
       text-transform: uppercase;
+      color: #121212;
+      opacity: 0.5;
+
+      &.active {
+        opacity: 1;
+      }
     }
   }
 `;
@@ -35,7 +41,7 @@ const Header = ({ className }) => (
       <Brand>Bookstore CMS</Brand>
       <Navigation>
         <ul>
-          <li>Books</li>
+          <li className="active">Books</li>
           <li>Categories</li>
         </ul>
       </Navigation>
