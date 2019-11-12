@@ -74,7 +74,7 @@ const styledBooksForm = styled(BooksForm)`
   }
 
   form {
-    margin-top: 1rem;
+    margin: 1rem 0;
     display: flex;
 
     * {
