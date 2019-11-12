@@ -23,7 +23,11 @@ const BooksList = ({
         </thead>
         <tbody>
           {visibleBooks.map((book) => (
-            <Book key={book.id} book={book} removeBook={removeBook} />
+            <Book
+              key={book.id}
+              book={book}
+              removeBook={removeBook}
+            />
           ))}
         </tbody>
       </table>

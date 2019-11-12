@@ -25,7 +25,10 @@ const BooksForm = ({ createBook }) => {
       <input name="title" value={state.title} type="text" placeholder="Title" />
       <select name="category" value={state.category}>
         {CATEGORIES.map((category) => (
-          <option key={category} value={category}>
+          <option
+            key={category}
+            value={category}
+          >
             {category}
           </option>
         ))}
