@@ -18,24 +18,15 @@ const mapStateToProps = (state) => ({
 const BooksList = ({ books, removeBook, changeFilter }) => (
   <div>
     <CategoryFilter changeFilter={changeFilter} />
-    <table>
-      <thead>
-        <tr>
-          <th>Book ID</th>
-          <th>Title</th>
-          <th>Category</th>
-        </tr>
-      </thead>
-      <tbody>
-        {books.map((book) => (
-          <Book
-            key={book.id}
-            book={book}
-            removeBook={removeBook}
-          />
-        ))}
-      </tbody>
-    </table>
+    <section>
+      {books.map((book) => (
+        <Book
+          key={book.id}
+          book={book}
+          removeBook={removeBook}
+        />
+      ))}
+    </section>
   </div>
 );
 
