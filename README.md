@@ -7,9 +7,6 @@ It is part of [microverse](https://www.microverse.org/) curriculum.
 
 - React.js
 - Redux
-- Ruby on Rails
-- GraphQL/Apollo
-- MongoDB
 
 # :electric_plug: Set up
 
