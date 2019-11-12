@@ -5,7 +5,11 @@ const getBooks = (state) => state.books;
 
 const getFilteredBooks = createSelector(
   [getFilter, getBooks],
-  (filter, books) => (filter === 'All' ? books : books.filter((book) => book.category === filter)),
+  (filter, books) => (
+    filter === 'All'
+      ? books
+      : books.filter((book) => book.category === filter)
+  ),
 );
 
 export default getFilteredBooks;
