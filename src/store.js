@@ -4,18 +4,16 @@ import uuid from './utils/uuid.js';
 
 const initialState = {
   filter: 'All',
-  books: {
-    Learning: [{
-      id: uuid(),
-      title: 'Redux',
-      category: 'Learning',
-    },
-    {
-      id: uuid(),
-      title: 'React',
-      category: 'Learning',
-    }],
+  books: [{
+    id: uuid(),
+    title: 'Redux',
+    category: 'Learning',
   },
+  {
+    id: uuid(),
+    title: 'React',
+    category: 'Learning',
+  }],
 };
 
 const store = createStore(reducer, initialState);

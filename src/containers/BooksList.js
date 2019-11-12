@@ -10,50 +10,46 @@ const mapDispatchToProps = (dispatch) => ({
   changeFilter: (filter) => dispatch(changeFilter(filter)),
 });
 
-const mapStateToProps = (state) => ({
-  filter: state.filter,
-  books: state.books,
-});
+const mapStateToProps = (state) => {
+  const { filter, books } = state;
+  return {
+    books: filter === 'All'
+      ? books
+      : books.filter((book) => book.category === filter),
+  };
+};
 
-const BooksList = ({
-  books,
-  filter,
-  removeBook,
-  changeFilter,
-}) => (
-    <div>
-      <CategoryFilter changeFilter={changeFilter} />
-      <table>
-        <thead>
-          <tr>
-            <th>Book ID</th>
-            <th>Title</th>
-            <th>Category</th>
-          </tr>
-        </thead>
-        <tbody>
-          {books[filter].map((book) => (
-            <Book
-              key={book.id}
-              book={book}
-              removeBook={removeBook}
-            />
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
+const BooksList = ({ books, removeBook, changeFilter }) => (
+  <div>
+    <CategoryFilter changeFilter={changeFilter} />
+    <table>
+      <thead>
+        <tr>
+          <th>Book ID</th>
+          <th>Title</th>
+          <th>Category</th>
+        </tr>
+      </thead>
+      <tbody>
+        {books.map((book) => (
+          <Book
+            key={book.id}
+            book={book}
+            removeBook={removeBook}
+          />
+        ))}
+      </tbody>
+    </table>
+  </div>
+);
 
 BooksList.propTypes = {
-  filter: PropTypes.string.isRequired,
-  books: PropTypes.shape(
-    PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        title: PropTypes.string.isRequired,
-        category: PropTypes.string.isRequired,
-      })
-    )
+  books: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired,
+    }),
   ).isRequired,
   removeBook: PropTypes.func.isRequired,
   changeFilter: PropTypes.func.isRequired,
