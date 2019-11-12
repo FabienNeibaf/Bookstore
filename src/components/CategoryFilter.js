@@ -60,36 +60,3 @@ export default styled(CategoryFilter)`
     }
   }
 `;
-
-// * {
-//   height: 45px;
-//   border-radius: 4px;
-//   border: solid 1px #e8e8e8;
-//   background-color: #ffffff;
-//   box-sizing: border-box;
-//   font-family: 'Montserrat';
-//   font-size: 16px;
-//   letter-spacing: -0.15px;
-//   color: #c4c4c4;
-// }
-
-// input {
-//   flex: auto;
-//   text-indent: 1rem;
-//   color: black;
-
-//   &::placeholder{
-//     color: #c4c4c4;
-//   }
-// }
-
-// select {
-//   text-indent: 1rem;
-//   width: 30%;
-//   margin: 0 2rem;
-
-//   option{
-//     font-size: 1rem;
-//     font-weight:300;
-//   }
-// }
