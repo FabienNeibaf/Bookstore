@@ -3,8 +3,9 @@ import reducer from './reducers';
 import uuid from './utils/uuid.js';
 
 const initialState = {
-  books: [
-    {
+  filter: 'All',
+  books: {
+    Learning: [{
       id: uuid(),
       title: 'Redux',
       category: 'Learning',
@@ -13,9 +14,8 @@ const initialState = {
       id: uuid(),
       title: 'React',
       category: 'Learning',
-    },
-  ],
-  filter: 'All',
+    }],
+  },
 };
 
 const store = createStore(reducer, initialState);

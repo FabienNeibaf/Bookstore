@@ -9,7 +9,7 @@ export const createBook = (book) => ({
 
 export const removeBook = (book) => ({
   type: REMOVE_BOOK,
-  id: book.id,
+  book,
 });
 
 export const changeFilter = (filter) => ({

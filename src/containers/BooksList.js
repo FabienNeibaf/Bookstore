@@ -16,13 +16,11 @@ const mapStateToProps = (state) => ({
 });
 
 const BooksList = ({
-  books, filter, removeBook, changeFilter,
-}) => {
-  const visibleBooks = filter === 'All'
-    ? books
-    : books.filter((book) => book.category === filter);
-
-  return (
+  books,
+  filter,
+  removeBook,
+  changeFilter,
+}) => (
     <div>
       <CategoryFilter changeFilter={changeFilter} />
       <table>
@@ -34,7 +32,7 @@ const BooksList = ({
           </tr>
         </thead>
         <tbody>
-          {visibleBooks.map((book) => (
+          {books[filter].map((book) => (
             <Book
               key={book.id}
               book={book}
@@ -45,16 +43,17 @@ const BooksList = ({
       </table>
     </div>
   );
-};
 
 BooksList.propTypes = {
   filter: PropTypes.string.isRequired,
-  books: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      title: PropTypes.string.isRequired,
-      category: PropTypes.string.isRequired,
-    }),
+  books: PropTypes.shape(
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        title: PropTypes.string.isRequired,
+        category: PropTypes.string.isRequired,
+      })
+    )
   ).isRequired,
   removeBook: PropTypes.func.isRequired,
   changeFilter: PropTypes.func.isRequired,
