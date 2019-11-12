@@ -29,19 +29,67 @@ CategoryFilter.propTypes = {
 };
 
 export default styled(CategoryFilter)`
-  padding: 1%;
+  font-family: 'Montserrat';
+  font-weight: 700;
+  color: #888888;
+  padding: 0 1rem;
   display: flex;
   margin: 1rem auto;
   max-width: 1200px;
   align-items: center;
   box-sizing: border-box;
-  background-color: #ffffff;
 
   select {
     padding: 5px;
     margin-left: 5px;
     min-width: 200px;
-    border-radius: 2px;
     border: 1px solid #aaa;
+
+    height: 2rem;
+    border-radius: 4px;
+    border: solid 1px #e8e8e8;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+    font-size: 16px;
+    letter-spacing: -0.15px;
+    color: #c4c4c4;
+    option {
+      font-size: 1rem;
+      font-weight: 300;
+    }
   }
 `;
+
+// * {
+//   height: 45px;
+//   border-radius: 4px;
+//   border: solid 1px #e8e8e8;
+//   background-color: #ffffff;
+//   box-sizing: border-box;
+//   font-family: 'Montserrat';
+//   font-size: 16px;
+//   letter-spacing: -0.15px;
+//   color: #c4c4c4;
+// }
+
+// input {
+//   flex: auto;
+//   text-indent: 1rem;
+//   color: black;
+
+//   &::placeholder{
+//     color: #c4c4c4;
+//   }
+// }
+
+// select {
+//   text-indent: 1rem;
+//   width: 30%;
+//   margin: 0 2rem;
+
+//   option{
+//     font-size: 1rem;
+//     font-weight:300;
+//   }
+// }

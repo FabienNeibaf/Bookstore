@@ -35,6 +35,13 @@ const Navigation = styled.nav`
   }
 `;
 
+const Profile = styled.div`
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  border: solid 1px #e8e8e8;
+`;
+
 const Header = ({ className }) => (
   <header className={className}>
     <div className="container">
@@ -45,6 +52,7 @@ const Header = ({ className }) => (
           <li>Categories</li>
         </ul>
       </Navigation>
+      <Profile />
     </div>
   </header>
 );
