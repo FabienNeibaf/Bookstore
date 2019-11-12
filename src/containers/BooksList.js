@@ -1,11 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book.js';
-
-const mapStateToProps = (state) => ({
-  books: state.books,
-});
 
 const BooksList = ({ books, removeBook }) => (
   <table>
@@ -35,4 +30,4 @@ BooksList.propTypes = {
   removeBook: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps)(BooksList);
+export default BooksList;
