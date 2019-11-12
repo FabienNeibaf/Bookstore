@@ -1,36 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import Book from './Book.js';
 import CategoryFilter from './CategoryFilter.js';
 
 const BooksList = ({
-  books, filter, removeBook, changeFilter,
+  books, filter, removeBook, changeFilter, className,
 }) => {
   const visibleBooks = filter === 'All'
     ? books
     : books.filter((book) => book.category === filter);
 
   return (
-    <div>
+    <div className={className}>
       <CategoryFilter changeFilter={changeFilter} />
-      <table>
-        <thead>
-          <tr>
-            <th>Book ID</th>
-            <th>Title</th>
-            <th>Category</th>
-          </tr>
-        </thead>
-        <tbody>
-          {visibleBooks.map((book) => (
-            <Book
-              key={book.id}
-              book={book}
-              removeBook={removeBook}
-            />
-          ))}
-        </tbody>
-      </table>
+
+      {visibleBooks.map((book) => (
+        <Book key={book.id} book={book} removeBook={removeBook} />
+      ))}
     </div>
   );
 };
@@ -46,6 +33,11 @@ BooksList.propTypes = {
   ).isRequired,
   removeBook: PropTypes.func.isRequired,
   changeFilter: PropTypes.func.isRequired,
+  className: PropTypes.string.isRequired,
 };
 
-export default BooksList;
+const StyledBookList = styled(BooksList)`
+  margin: auto
+`;
+
+export default StyledBookList;
