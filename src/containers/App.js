@@ -10,19 +10,32 @@ const mapDispatchToProps = (dispatch) => ({
   removeBook: (book) => dispatch(removeBook(book)),
 });
 
-const App = ({ createBook, removeBook }) => (
+const mapStateToProps = (state) => ({
+  books: state.books,
+});
+
+
+const App = ({ createBook, removeBook, books }) => (
   <div>
-    <BooksList removeBook={removeBook} />
+    <BooksList removeBook={removeBook} books={books} />
     <BooksForm createBook={createBook} />
   </div>
 );
 
+
 App.propTypes = {
   createBook: PropTypes.func.isRequired,
   removeBook: PropTypes.func.isRequired,
+  books: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps,
 )(App);
