@@ -7,7 +7,10 @@ const Book = ({ book, removeBook }) => (
     <td>{book.title}</td>
     <td>{book.category}</td>
     <td>
-      <button onClick={() => removeBook(book)} type="button">
+      <button
+        onClick={() => removeBook(book)}
+        type="button"
+      >
         delete
       </button>
     </td>

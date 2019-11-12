@@ -1,28 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { createBook, removeBook } from '../actions';
-import BooksList from '../containers/BooksList.js';
-import BooksForm from '../containers/BooksForm.js';
+import BooksList from '../containers/BooksList';
+import BooksForm from '../containers/BooksForm';
 
-const mapDispatchToProps = (dispatch) => ({
-  createBook: (book) => dispatch(createBook(book)),
-  removeBook: (book) => dispatch(removeBook(book)),
-});
-
-const App = ({ createBook, removeBook }) => (
+const App = () => (
   <div>
-    <BooksList removeBook={removeBook} />
-    <BooksForm createBook={createBook} />
+    <BooksList />
+    <BooksForm />
   </div>
 );
 
-App.propTypes = {
-  createBook: PropTypes.func.isRequired,
-  removeBook: PropTypes.func.isRequired,
-};
-
-export default connect(
-  null,
-  mapDispatchToProps,
-)(App);
+export default App;
