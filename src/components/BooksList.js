@@ -6,7 +6,10 @@ import CategoryFilter from './CategoryFilter.js';
 const BooksList = ({
   books, filter, removeBook, changeFilter,
 }) => {
-  const visibleBooks = filter === 'All' ? books : books.filter((book) => book.category === filter);
+  const visibleBooks = filter === 'All'
+    ? books
+    : books.filter((book) => book.category === filter);
+
   return (
     <div>
       <CategoryFilter changeFilter={changeFilter} />

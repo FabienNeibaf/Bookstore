@@ -1,4 +1,4 @@
-const CATEGORIES = [
+export default [
   'Action',
   'Biography',
   'History',
@@ -7,5 +7,3 @@ const CATEGORIES = [
   'Learning',
   'Sci-Fi',
 ];
-
-export default CATEGORIES;
